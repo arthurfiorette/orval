@@ -1342,10 +1342,10 @@ ${Object.entries(objectArgs)
             string,
             ZodValidationSchemaDefinition
           > = {};
-          let allConsts = '';
+          const allConsts: string[] = [];
           for (const partSchema of allOfArgs) {
             if (partSchema.consts.length > 0) {
-              allConsts += partSchema.consts.join('\n');
+              allConsts.push(partSchema.consts.join('\n'));
             }
             const objectFunctionIndex = partSchema.functions.findIndex(
               ([fnName]) => fnName === 'object' || fnName === 'strictObject',
@@ -1360,7 +1360,7 @@ ${Object.entries(objectArgs)
               }
             }
           }
-          appendConstsChunk(allConsts);
+          appendConstsChunk(allConsts.join('\n'));
           current = renderObject(
             mergedProperties,
             getObjectFunctionName(true, strict),
@@ -1456,14 +1456,17 @@ ${Object.entries(objectArgs)
 
       if (fn === 'tuple') {
         const tupleItems = (args as ZodValidationSchemaDefinition[])
-          .map((x) => renderMiniDefinition(x, fieldPath).expr)
+          .map((x) => {
+            const rendered = renderMiniDefinition(x, fieldPath);
+            appendConstsChunk(x.consts.join('\n'));
+            return rendered.expr;
+          })
           .join(',\n');
         const next = definition.functions[index + 1];
         if (next?.[0] === 'rest') {
-          const rest = renderMiniDefinition(
-            next[1] as ZodValidationSchemaDefinition,
-            fieldPath,
-          ).expr;
+          const restDefinition = next[1] as ZodValidationSchemaDefinition;
+          const rest = renderMiniDefinition(restDefinition, fieldPath).expr;
+          appendConstsChunk(restDefinition.consts.join('\n'));
           current = {
             expr: zodMiniCall('tuple', `[${tupleItems}], ${rest}`),
             kind: 'tuple',
@@ -2835,9 +2838,9 @@ const generateZodRoute = async (
     ];
 
     if (zodVariant === 'mini') {
-      return `${zodMiniCall('array', itemName)}${
-        checks.length ? `.check(${checks.join(', ')})` : ''
-      }`;
+      return `${zodMiniCall('array', itemName)}${checks
+        .map((check) => `.check(${check})`)
+        .join('')}`;
     }
 
     return `zod.array(${itemName})${rules?.min ? `.min(${rules.min})` : ''}${
