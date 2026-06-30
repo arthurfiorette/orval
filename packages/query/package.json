@@ -1,5 +1,5 @@
 {
-  "name": "@orval/query",
+  "name": "@arthurfiorette/orval-query",
   "version": "8.19.0",
   "homepage": "https://orval.dev/docs/guides/react-query",
   "bugs": {
@@ -23,8 +23,8 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@orval/core": "workspace:*",
-    "@orval/fetch": "workspace:*",
+    "@arthurfiorette/orval-core": "workspace:*",
+    "@arthurfiorette/orval-fetch": "workspace:*",
     "remeda": "^2.33.6"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 {
-  "name": "@orval/effect",
+  "name": "@arthurfiorette/orval-effect",
   "version": "8.19.0",
   "homepage": "https://orval.dev/docs/guides/effect",
   "bugs": {
@@ -23,7 +23,7 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@orval/core": "workspace:*",
+    "@arthurfiorette/orval-core": "workspace:*",
     "remeda": "^2.33.6"
   },
   "devDependencies": {

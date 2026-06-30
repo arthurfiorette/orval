@@ -1,5 +1,5 @@
 {
-  "name": "@orval/mcp",
+  "name": "@arthurfiorette/orval-mcp",
   "version": "8.19.0",
   "homepage": "https://orval.dev/docs/guides/mcp",
   "bugs": {
@@ -23,9 +23,9 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@orval/core": "workspace:*",
-    "@orval/fetch": "workspace:*",
-    "@orval/zod": "workspace:*"
+    "@arthurfiorette/orval-core": "workspace:*",
+    "@arthurfiorette/orval-fetch": "workspace:*",
+    "@arthurfiorette/orval-zod": "workspace:*"
   },
   "devDependencies": {
     "rimraf": "catalog:",

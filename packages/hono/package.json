@@ -1,5 +1,5 @@
 {
-  "name": "@orval/hono",
+  "name": "@arthurfiorette/orval-hono",
   "version": "8.19.0",
   "homepage": "https://orval.dev/docs/guides/hono",
   "bugs": {
@@ -23,8 +23,8 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@orval/core": "workspace:*",
-    "@orval/zod": "workspace:*",
+    "@arthurfiorette/orval-core": "workspace:*",
+    "@arthurfiorette/orval-zod": "workspace:*",
     "fs-extra": "^11.3.2"
   },
   "devDependencies": {

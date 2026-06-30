@@ -1,5 +1,5 @@
 {
-  "name": "@orval/solid-start",
+  "name": "@arthurfiorette/orval-solid-start",
   "version": "8.19.0",
   "homepage": "https://orval.dev/docs/guides/solid-start",
   "bugs": {
@@ -23,7 +23,7 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@orval/core": "workspace:*"
+    "@arthurfiorette/orval-core": "workspace:*"
   },
   "devDependencies": {
     "rimraf": "catalog:",

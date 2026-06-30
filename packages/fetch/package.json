@@ -1,5 +1,5 @@
 {
-  "name": "@orval/fetch",
+  "name": "@arthurfiorette/orval-fetch",
   "version": "8.19.0",
   "homepage": "https://orval.dev/docs/guides/fetch",
   "bugs": {
@@ -23,7 +23,7 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@orval/core": "workspace:*"
+    "@arthurfiorette/orval-core": "workspace:*"
   },
   "devDependencies": {
     "rimraf": "catalog:",

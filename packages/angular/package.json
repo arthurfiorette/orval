@@ -1,5 +1,5 @@
 {
-  "name": "@orval/angular",
+  "name": "@arthurfiorette/orval-angular",
   "version": "8.19.0",
   "homepage": "https://orval.dev/docs/guides/angular",
   "bugs": {
@@ -23,7 +23,7 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@orval/core": "workspace:*"
+    "@arthurfiorette/orval-core": "workspace:*"
   },
   "devDependencies": {
     "rimraf": "catalog:",
